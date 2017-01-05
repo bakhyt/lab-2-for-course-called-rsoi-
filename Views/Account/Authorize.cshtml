@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Разрешить доступ к приложению";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title  + @ViewBag.client_id</h1>
+</hgroup>
+
+
+@using (Html.BeginForm("AccessSuccess", "Account", new { redirect_uri = ViewBag.redirect_uri, client_id = ViewBag.client_id }))
+{   
+    <fieldset>
+        <input type="submit" value="Подтвердить" />
+    </fieldset>
+}
